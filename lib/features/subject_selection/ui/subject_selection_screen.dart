@@ -1,4 +1,6 @@
+import 'package:eramo_task/core/helpers/extensions.dart';
 import 'package:eramo_task/core/helpers/spacing.dart';
+import 'package:eramo_task/core/routing/routes.dart';
 import 'package:eramo_task/core/theming/colors.dart';
 import 'package:eramo_task/core/theming/style.dart';
 import 'package:eramo_task/core/widgets/custom_button.dart';
@@ -15,38 +17,30 @@ class SubjectSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const TopBar(
               child: SubjectTopBarText(name: 'Mohamed Gamal'),
             ),
-            verticalSpace(10),
-            Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10).w,
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SubjectTitleAndGrid(subjects: subjects),
-                      verticalSpace(20),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 100).w,
-                        child: CustomButton(
-                          text: 'Next',
-                          textStyle: TextStyles.font18White,
-                          backgroundColor: ColorsManager.blue,
-                          onPressed: () {},
-                        ),
-                      ),
-                      verticalSpace(20),
-                    ],
-                  ),
-                ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10).w,
+              child: SubjectTitleAndGrid(subjects: subjects),
+            ),
+            verticalSpace(20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 100).w,
+              child: CustomButton(
+                text: 'Next',
+                textStyle: TextStyles.font18White,
+                backgroundColor: ColorsManager.blue,
+                onPressed: () =>
+                    context.pushNamed(Routes.teatchersProfilesScreen),
               ),
             ),
+            verticalSpace(20),
           ],
         ),
       ),

@@ -13,7 +13,7 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 120.h,
+      height: 150.h,
       decoration: BoxDecoration(
         color: ColorsManager.blue,
         borderRadius: BorderRadius.only(
