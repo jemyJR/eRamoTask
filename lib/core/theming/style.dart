@@ -42,9 +42,17 @@ class TextStyles {
     fontSize: 12.sp,
     color: ColorsManager.green,
   );
+  static TextStyle font12Blue = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsManager.blue,
+  );
   static TextStyle font12Black = TextStyle(
     fontSize: 12.sp,
     color: ColorsManager.black,
+  );
+  static TextStyle font12Gray = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsManager.gray,
   );
   static TextStyle font10Black = TextStyle(
     fontSize: 10.sp,

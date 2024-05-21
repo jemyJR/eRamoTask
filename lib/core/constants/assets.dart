@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesPayMethodVisaMastercardLogos
+  /// assets/images/pay_method/visa-mastercard-logos.jpg
+  static const String imagesPayMethodVisaMastercardLogos = "assets/images/pay_method/visa-mastercard-logos.jpg";
+
   /// Assets for imagesPayPay1
   /// assets/images/pay/pay1.png
   static const String imagesPayPay1 = "assets/images/pay/pay1.png";

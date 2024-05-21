@@ -65,6 +65,7 @@ flutter:
     - assets/images/subjects/
     - assets/images/teacher/
     - assets/images/pay/
+    - assets/images/pay_method/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
