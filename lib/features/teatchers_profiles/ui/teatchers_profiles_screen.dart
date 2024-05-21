@@ -1,8 +1,7 @@
 import 'package:eramo_task/core/helpers/extensions.dart';
 import 'package:eramo_task/core/helpers/spacing.dart';
-import 'package:eramo_task/core/theming/colors.dart';
-import 'package:eramo_task/core/theming/style.dart';
-import 'package:eramo_task/core/widgets/custom_button.dart';
+import 'package:eramo_task/core/routing/routes.dart';
+import 'package:eramo_task/core/widgets/back_and_confirm_buttons.dart';
 import 'package:eramo_task/core/widgets/top_bar.dart';
 import 'package:eramo_task/features/teatchers_profiles/ui/widgets/search_bar.dart';
 import 'package:eramo_task/features/teatchers_profiles/ui/widgets/teacher_grid.dart';
@@ -26,25 +25,9 @@ class TeatchersProfilesScreen extends StatelessWidget {
             const SearchBarWidget(),
             const TeacherGrid(),
             verticalSpace(20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                horizontalSpace(30),
-                CustomButton(
-                  text: 'Back',
-                  textStyle: TextStyles.font18BlackBold,
-                  backgroundColor: ColorsManager.gray,
-                  onPressed: () => context.pop(),
-                ),
-                horizontalSpace(30),
-                CustomButton(
-                  text: 'Confirm',
-                  textStyle: TextStyles.font18White,
-                  backgroundColor: ColorsManager.blue,
-                  onPressed: () {},
-                ),
-                horizontalSpace(30),
-              ],
+            BackAndConfirmButtons(
+              onBack: () => context.pop(),
+              onConfirm: () => context.pushNamed(Routes.paymentScreen),
             ),
             verticalSpace(20),
           ],
