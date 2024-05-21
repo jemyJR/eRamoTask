@@ -5,10 +5,12 @@ import 'package:eramo_task/core/theming/colors.dart';
 import 'package:eramo_task/core/theming/style.dart';
 import 'package:eramo_task/core/widgets/custom_button.dart';
 import 'package:eramo_task/core/widgets/top_bar.dart';
+import 'package:eramo_task/features/subject_selection/logic/cubit/subject_checked_cubit.dart';
 import 'package:eramo_task/features/subject_selection/ui/widgets/subject_title_and_grid.dart';
 import 'package:eramo_task/features/subject_selection/ui/widgets/subject_top_bar_text.dart';
 import 'package:eramo_task/features/subject_selection/data/subjects_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SubjectSelectionScreen extends StatelessWidget {
@@ -32,12 +34,19 @@ class SubjectSelectionScreen extends StatelessWidget {
             verticalSpace(20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100).w,
-              child: CustomButton(
-                text: 'Next',
-                textStyle: TextStyles.font18White,
-                backgroundColor: ColorsManager.blue,
-                onPressed: () =>
-                    context.pushNamed(Routes.teatchersProfilesScreen),
+              child: BlocBuilder<SubjectCheckedCubit, SubjectCheckedState>(
+                builder: (context, state) {
+                  return CustomButton(
+                    text: 'Next',
+                    textStyle: TextStyles.font18White,
+                    backgroundColor: ColorsManager.blue,
+                    onPressed: () =>
+                        context.read<SubjectCheckedCubit>().getSelectedCount() >
+                                0
+                            ? context.pushNamed(Routes.teatchersProfilesScreen)
+                            : () {},
+                  );
+                },
               ),
             ),
             verticalSpace(20),

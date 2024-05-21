@@ -13,4 +13,8 @@ class SubjectCheckedCubit extends Cubit<SubjectCheckedState> {
 
     emit(SubjectSelectionState(selectedSubjects: selectedSubjects));
   }
+
+  int getSelectedCount() {
+    return state.selectedSubjects.length;
+  }
 }
