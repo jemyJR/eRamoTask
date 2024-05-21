@@ -1,4 +1,5 @@
 import 'package:eramo_task/core/routing/routes.dart';
+import 'package:eramo_task/features/done/ui/done_screen.dart';
 import 'package:eramo_task/features/payment/ui/payment_screen.dart';
 import 'package:eramo_task/features/payment_method/ui/payment_method_screen.dart';
 import 'package:eramo_task/features/subject_selection/logic/cubit/subject_checked_cubit.dart';
@@ -32,6 +33,10 @@ class AppRouter {
       case Routes.paymentMethodScreen:
         return MaterialPageRoute(
           builder: (context) => const PaymentMethodScreen(),
+        );
+      case Routes.doneScreen:
+        return MaterialPageRoute(
+          builder: (context) => const DoneScreen(),
         );
       default:
         return MaterialPageRoute(

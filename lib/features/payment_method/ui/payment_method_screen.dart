@@ -1,6 +1,7 @@
 import 'package:eramo_task/core/constants/assets.dart';
 import 'package:eramo_task/core/helpers/extensions.dart';
 import 'package:eramo_task/core/helpers/spacing.dart';
+import 'package:eramo_task/core/routing/routes.dart';
 import 'package:eramo_task/core/widgets/back_and_confirm_buttons.dart';
 import 'package:eramo_task/core/widgets/stepper_container.dart';
 import 'package:eramo_task/features/payment_method/ui/widget/payment_method_expanded_title.dart';
@@ -28,7 +29,7 @@ class PaymentMethodScreen extends StatelessWidget {
               verticalSpace(20),
               BackAndConfirmButtons(
                 onBack: context.pop,
-                onConfirm: () {},
+                onConfirm: () => context.pushNamed(Routes.doneScreen),
               ),
               verticalSpace(20),
             ],

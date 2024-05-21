@@ -8,6 +8,11 @@ class TextStyles {
     color: ColorsManager.white,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle font30GreenBold = TextStyle(
+    fontSize: 30.sp,
+    color: ColorsManager.green,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle font25White = TextStyle(
     fontSize: 25.sp,
     color: ColorsManager.white,
@@ -32,6 +37,10 @@ class TextStyles {
   static TextStyle font18Black = TextStyle(
     fontSize: 18.sp,
     color: ColorsManager.black,
+  );
+  static TextStyle font18Green = TextStyle(
+    fontSize: 18.sp,
+    color: ColorsManager.green,
   );
   static TextStyle font15BlackBold = TextStyle(
     fontSize: 15.sp,
